@@ -1,0 +1,45 @@
+body {
+	background: url("img/fon.jpg") #f7eaca;
+	text-align: left;
+}
+nav {
+	overflow: hidden;
+	float: left;
+}
+
+nav li {
+	float:left;
+	list-style: none;
+}
+nav li a {
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 30px;
+	color:#1d3c6a;
+	text-shadow: 0 2px 0 white;
+}
+nav li a:hover {
+	color: #629fb2;
+}
+main {
+	padding: 60px 0px 0px 10px;
+}
+
+h1 {
+	padding: 50px 0px 0px 50px;
+	text-align: left;
+	color:#1d3c6a;
+	text-shadow: 0 2px 0 white;
+}
+body {
+	font-size: 14px;
+    line-height: 28px;
+    font-family: "Arial",serif;
+    font-weight: 300;
+}
+table {
+	text-align: left;
+}
+
+

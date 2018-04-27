@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <img src="img/dream.jpg" alt="dream">
+    <nav>
+            <ul>
+                <li>
+                  <a href="#home">Home</a>
+                 </li>
+                 <li>
+                  <a href="#projects">Projects</a>
+                 </li>
+                 <li>
+                  <a href="#gallery">Gallery</a>
+                 </li>
+                 <li>
+                  <a href="#blog">Blog</a>
+                 </li>
+                 <li>
+                  <a href="#contact">Contact</a>
+                 </li>
+            </ul>
+            <br>
+        </nav>
+    </header>
+    <main>
+    <hr>
+        <section id="home">
+        <div>
+            <table>
+                <tr>
+                    <td class="leftcol"><img src="img/myfoto.jpg" alt="my foto"></td>
+                    <td valign="top"><h1>Hi, I am LYUDMYLA HERUS</h1></td>
+                </tr>
+            </table>
+        </div>
+            <br>
+            <p><b><i>About me</i></b></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at 
+            ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius
+            pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+            </p>
+            <p><b>Get Socialize with me:</b></p>
+                <a href="https://twitter.com/RealFavicon" target="blank"><img scr="foto/twitter.png" alt="twitter"></a>
+                <a href="https://www.facebook.com/RealFaviconGenerator" target="blank"><img scr="foto/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/RealFaviconGenerator" target="blank"><img scr="foto/instagram.png" alt="instagram"></a>
+            <hr>
+        <table style="width:100%">
+            <tbody>
+                <tr>
+                    <td><h4>weather</h4><div id="meteoprog_informer_standart" data-params="girl:Lviv:300x100:grey:48x50" ><a href="https://www.meteoprog.ua/ua/">погода</a><br /><a href="https://www.meteoprog.ua/ua/weather/Lviv/">Погода в  Львові</a><br /></div><script src="https://www.meteoprog.ua/ua/weather/informer/standart.js"></script>
+                    </td>
+                    <td><h4>video</h4><iframe style="border:0" width="360" height="220"
+                    src="https://www.youtube.com/embed/TORSuS3jjn0"
+                    allowfullscreen></iframe></td>
+                    <td><h4>calendar</h4>
+                    <table id="calendar1">
+                     <thead>
+                    <tr><td colspan="4"><td colspan="3">
+                <tr><td>Mo<td>Tu<td>We<td>Th<td>Fr<td>Sa<td>Su
+            <tbody>
+        </table>
+<script>
+var D1 = new Date(),
+    D1last = new Date(D1.getFullYear(),D1.getMonth()+1,0).getDate(), // последний день месяца
+    D1Nlast = new Date(D1.getFullYear(),D1.getMonth(),D1last).getDay(), // день недели последнего дня месяца
+    D1Nfirst = new Date(D1.getFullYear(),D1.getMonth(),1).getDay(), // день недели первого дня месяца
+    calendar1 = '<tr>',
+    month=["January","February","March","April","May","June","July","August","September","October","November","December"]; // название месяца, вместо цифр 0-11
+// пустые клетки до первого дня текущего месяца
+if (D1Nfirst != 0) {
+  for(var  i = 1; i < D1Nfirst; i++) calendar1 += '<td>';
+}else{ // если первый день месяца выпадает на воскресенье, то требуется 7 пустых клеток 
+  for(var  i = 0; i < 6; i++) calendar1 += '<td>';
+}
+// дни месяца
+for(var  i = 1; i <= D1last; i++) {
+  if (i != D1.getDate()) {
+    calendar1 += '<td>' + i;
+  }else{
+    calendar1 += '<td id="today">' + i;  // сегодняшней дате можно задать стиль CSS
+  }
+  if (new Date(D1.getFullYear(),D1.getMonth(),i).getDay() == 0) {  // если день выпадает на воскресенье, то перевод строки
+    calendar1 += '<tr>';
+  }
+}
+// пустые клетки после последнего дня месяца
+if (D1Nlast != 0) {
+  for(var  i = D1Nlast; i < 7; i++) calendar1 += '<td>';
+}
+document.querySelector('#calendar1 tbody').innerHTML = calendar1;
+document.querySelector('#calendar1 thead td:last-child').innerHTML = D1.getFullYear();
+document.querySelector('#calendar1 thead td:first-child').innerHTML = month[D1.getMonth()];
+</script>
+                    </td>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+<footer><a href="projects.html">Next page</a>
+</footer>
+</html>
